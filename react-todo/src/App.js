@@ -1,72 +1,85 @@
 import React, { Component } from "react";
+import { Icon } from '@iconify/react';
 import styled from "styled-components";
 
-const DivHeader = styled.div`
-height: 7vh;
+const DivHeader = styled.nav`
 background-color: gray;
+height: 7vh;
 display: flex;
 justify-content: space-evenly;
 align-items: flex-end;
 `
-
+const TitleNav = styled.p`
+color: white; 
+font-size: 1.7rem;
+transition: all 0.3s ease-in;
+&:hover {
+text-decoration:underline;
+}
+`
 const Main = styled.main`
-height:120vh;
+height:93vh;
 background-color: purple;
 display: flex;
 justify-content: center;
 align-items: center;
 `
-
-const Menu = styled.p`
-width: 20vw;
-color: white; 
-font-size: 2rem
-`
 const DivButton = styled.div`
 height: 5vw;
 background-color: blue;
+display: flex;
+justify-content: left;
+align-items: center;
 `
 
-// const Iframe = styled.iframe`
-// border:solid  transparent;
-//        width:60vw ;
-//        height:70vh;
-//         frameborder:0 ;
-//         scrolling:yes;`
-        
+const Menu = styled.button`
+background-color: transparent;
+/* border: transparent; */
+width: 8vw;
+color: white; 
+font-size: 1.5rem;
+margin-left: 2rem;
+
+`
+//----------------------------------------------------------
+// @media (min-width: 201px) and (max-width: 500px){
+// const DivHeader = styled.nav`
+// background-color: gray;
+// height: 7vh;
+// display: flex;
+// justify-content: space-evenly;
+//  align-items: flex-end;
+//   `
+// }
+
 
 class Todo extends Component {
 
   state = {
     inputData: "",
-    Listdata: []
+    Listdata: [],
+    Imagens:{
+    }
   }
 
   render() {
     return (
       <>
     <DivHeader>  
-      <p>Dia</p> 
-      <p>Semana</p>
-       <p>Mês</p>
-       <p>Ano</p>
+      <TitleNav>Dia</TitleNav> 
+      <TitleNav>Semana</TitleNav>
+       <TitleNav>Mês</TitleNav>
+       <TitleNav>Ano</TitleNav>
      </DivHeader>
 
      <DivButton> 
-       <Menu> x Lista </Menu> 
+       <Menu> 
+       Lista
+       </Menu> 
        
      </DivButton>
      <Main>
 
-
-
-
-      {/* <div>
-     <Iframe
-      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FSao_Paulo&title=Agenda%20%20Vai%20na%20Web&src=Y19jbGFzc3Jvb21mOWNkMWE5Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23202124"
-       >
-       </Iframe>
-      </div> */}
 
      </Main>
 
